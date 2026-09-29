@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BusRoute Thailand — ระยะทางรถเมล์ระหว่างจังหวัด</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">🚌 <span>BusRoute</span> Thailand</div>
+  <nav><a href="#home">หน้าหลัก</a><a href="#search">ค้นหาเส้นทาง</a><a href="#data">ข้อมูลจังหวัด</a></nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">INTERACTIVE WEB APPLICATION</p>
+    <h1>คำนวณระยะทาง<br><span>รถเมล์ระหว่างจังหวัด</span></h1>
+    <p>เลือกจังหวัดต้นทางและปลายทาง ระบบจะแสดงระยะทางโดยประมาณ พร้อมเส้นทางและเวลาที่ใช้ในการเดินทาง</p>
+    <a class="primary" href="#search">เริ่มค้นหาเส้นทาง →</a>
+  </div>
+  <div class="bus-art">🚌</div>
+</section>
+
+<section id="search" class="panel">
+  <div class="section-title"><span>01</span><h2>ค้นหาเส้นทางรถเมล์</h2></div>
+  <div class="form-grid">
+    <label>จังหวัดต้นทาง
+      <select id="from"></select>
+    </label>
+    <label>จังหวัดปลายทาง
+      <select id="to"></select>
+    </label>
+    <button id="swap" class="secondary">⇄ สลับจังหวัด</button>
+    <button id="find" class="primary">🔎 คำนวณระยะทาง</button>
+  </div>
+  <div id="result" class="result hidden"></div>
+</section>
+
+<section id="data" class="panel">
+  <div class="section-title"><span>02</span><h2>ข้อมูลเส้นทางตัวอย่าง</h2></div>
+  <p class="muted">ข้อมูลระยะทางเป็นค่าประมาณสำหรับการเรียนรู้และสาธิตระบบ สามารถแก้ไขข้อมูลใน <code>script.js</code> ได้</p>
+  <div id="routeCards" class="cards"></div>
+</section>
+
+<section class="panel concept">
+  <div class="section-title"><span>03</span><h2>หลักการคณิตศาสตร์ดิสครีต</h2></div>
+  <div class="concept-grid">
+    <article><b>Graph Theory</b><p>จังหวัด = Vertex และเส้นทางรถเมล์ = Edge โดยน้ำหนักของเส้นทางคือระยะทางโดยประมาณ (กม.)</p></article>
+    <article><b>Weighted Graph</b><p>ระบบใช้ระยะทางเป็น Weight เพื่อเปรียบเทียบเส้นทางระหว่างจังหวัด</p></article>
+    <article><b>Interactive JavaScript</b><p>ผู้ใช้เลือกจังหวัดและกดคำนวณ ระบบจะค้นข้อมูลและแสดงผลทันทีโดยไม่ต้องโหลดหน้าใหม่</p></article>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 BusRoute Thailand · Interactive Web Application</footer>
+<script src="script.js"></script>
+</body>
+</html>
